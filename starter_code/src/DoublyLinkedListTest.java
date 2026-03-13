@@ -74,6 +74,19 @@ public class DoublyLinkedListTest {
 
     }
 
+    /**
+     * @author Anna Z
+     * @see GetFirstOnEmptyThrowsException
+     */
+    @Test
+    public void testGetFirstOnEmptyThrowsException() {
+        if(SHOULD_FAIL){
+            list = GetFirstOnEmptyThrowsException<>();
+        }
+
+        assertThrows(NoSuchElementException.class, () -> list.getFirst());
+    }
+
     // Tests for getLast
     /**
      * @author Pranit Vaikuntam
@@ -99,7 +112,7 @@ public class DoublyLinkedListTest {
     @Test
     public void testIsEmpty() {
         //fail("Not yet implemented");
-        if (SHOULD_FAIL) list = new isEmpty<>();
+        if (SHOULD_FAIL) list = new IsEmpty<>();
 
         list.add(0, 1);
         list.removeLast();
@@ -117,7 +130,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testIsEmptyWhenCreated() {
-        if (SHOULD_FAIL) list = new IsEmptyCreated<>();
+        if (SHOULD_FAIL) list = new IsEmptyWhenCreated<>();
         assertTrue(list.isEmpty());
     }
 
