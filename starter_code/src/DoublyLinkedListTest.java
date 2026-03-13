@@ -11,7 +11,7 @@ public class DoublyLinkedListTest {
      * Use this to toggle between using the DoublyLinkedList class and your broken classes
      * You may submit with either true or false.
      */
-    boolean SHOULD_FAIL = false;
+    boolean SHOULD_FAIL = true;
 
     private DoublyLinkedList<Integer> list;
 
@@ -61,7 +61,7 @@ public class DoublyLinkedListTest {
     @Test
     public void testGetFirst() {
         //fail("Not yet implemented");
-        if (SHOULD_FAIL) list = new GetAtIndex<>();
+        if (SHOULD_FAIL) list = new GetFirst<>();
 
         list.add(0, 1);
         list.add(1, 2);

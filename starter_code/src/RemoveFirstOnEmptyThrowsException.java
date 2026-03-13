@@ -3,7 +3,7 @@
  */
 public class RemoveFirstOnEmptyThrowsException <E> extends DoublyLinkedList<E> {
     @Override
-    public E getFirst() {
+    public E removeFirst() {
         if (super.size == 0) {
             return null;
         } else {
