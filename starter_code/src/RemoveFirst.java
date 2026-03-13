@@ -3,7 +3,7 @@
  */
 public class RemoveFirst<E> extends DoublyLinkedList<E>{
     @Override
-    public E remove(int index) {
+    public E removeFirst() {
         return super.removeLast();
     }
 }

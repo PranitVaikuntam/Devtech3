@@ -74,19 +74,6 @@ public class DoublyLinkedListTest {
 
     }
 
-    /**
-     * @author Anna Z
-     * @see GetFirstOnEmptyThrowsException
-     */
-    @Test
-    public void testGetFirstOnEmptyThrowsException() {
-        if(SHOULD_FAIL){
-            list = GetFirstOnEmptyThrowsException<>();
-        }
-
-        assertThrows(NoSuchElementException.class, () -> list.getFirst());
-    }
-
     // Tests for getLast
     /**
      * @author Pranit Vaikuntam
@@ -102,6 +89,33 @@ public class DoublyLinkedListTest {
         list.addFirst(0);
         list.addLast(3);
         assertEquals(3, list.getLast());
+    }
+
+    /**
+     * @author Pranit Vaikuntam
+     * @see GetFirstOnEmptyThrowsException*
+     */
+    @Test
+    public void testGetFirstOnEmptyThrowsException(){
+        if(SHOULD_FAIL){
+            list = new GetFirstOnEmptyThrowsException<>();
+        }
+
+        assertThrows(NoSuchElementException.class, () -> list.getFirst());
+
+    }
+
+    /**
+     * @author Pranit Vaikuntam
+     * @see GetLastOnEmptyThrowsException*
+     */
+    @Test
+    public void testGetLastOnEmptyThrowsException(){
+        if(SHOULD_FAIL){
+            list = new GetLastOnEmptyThrowsException<>();
+        }
+
+        assertThrows(NoSuchElementException.class, () -> list.getLast());
     }
 
     // Tests for isEmpty
@@ -142,7 +156,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testAddAtIndexOutOfBoundsThrowsException() {
-    //    fail("Not yet implemented");
+        //    fail("Not yet implemented");
         if(SHOULD_FAIL){
             list = new AddAtIndexOutOfBoundsThrowsException<>();
         }
@@ -182,7 +196,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testAddLastAddsElement() {
-    //    fail("Not yet implemented");
+        //    fail("Not yet implemented");
 
         if(SHOULD_FAIL){
             list = new AddLastAddsElement<>();
@@ -206,7 +220,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testRemoveAtIndex() {
-     //   fail("Not yet implemented");
+        //   fail("Not yet implemented");
 
         if(SHOULD_FAIL){
             list = new RemoveAtIndex<>();
@@ -261,6 +275,33 @@ public class DoublyLinkedListTest {
         list.removeLast();
         assertNotEquals(2, list.getFirst());
 
+    }
+
+    /**
+     * @author Pranit Vaikuntam
+     * @see RemoveFirstOnEmptyThrowsException*
+     */
+    @Test
+    public void testRemoveFirstOnEmptyThrowsException(){
+        if(SHOULD_FAIL){
+            list = new RemoveFirstOnEmptyThrowsException<>();
+        }
+
+        assertThrows(NoSuchElementException.class, () -> list.removeFirst());
+
+    }
+
+    /**
+     * @author Pranit Vaikuntam
+     * @see RemoveLastOnEmptyThrowsException*
+     */
+    @Test
+    public void testRemoveLastOnEmptyThrowsException(){
+        if(SHOULD_FAIL){
+            list = new RemoveLastOnEmptyThrowsException<>();
+        }
+
+        assertThrows(NoSuchElementException.class, () -> list.removeLast());
     }
 
     // Tests for size
