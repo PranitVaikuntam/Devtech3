@@ -37,26 +37,88 @@ public class DoublyLinkedListTest {
     }
 
     /**
-     * @author
-     * @see
+     * @author Pranit Vaikuntam
+     * @see GetAtIndex
      */
     @Test
     public void testGetAtIndex() {
-        fail("Not yet implemented");
+        //fail("Not yet implemented");
+        if (SHOULD_FAIL) list = new GetAtIndex<>();
+
+        list.add(0, 1);
+        list.add(1, 2);
+        list.addFirst(0);
+        list.addLast(3);
+        assertEquals(0, list.get(0));
+        assertEquals(1, list.get(1));
     }
 
     // Tests for getFirst
+    /**
+     * @author Pranit Vaikuntam
+     * @see GetFirst
+     */
+    @Test
+    public void testGetFirst() {
+        //fail("Not yet implemented");
+        if (SHOULD_FAIL) list = new GetAtIndex<>();
+
+        list.add(0, 1);
+        list.add(1, 2);
+        list.addFirst(0);
+        list.addLast(3);
+        assertEquals(0, list.getFirst());
+
+        list.removeFirst();
+        assertEquals(1, list.getFirst());
+
+    }
 
     // Tests for getLast
+    /**
+     * @author Pranit Vaikuntam
+     * @see GetLast
+     */
+    @Test
+    public void testGetLast() {
+        //fail("Not yet implemented");
+        if (SHOULD_FAIL) list = new GetLast<>();
+
+        list.add(0, 1);
+        list.add(1, 2);
+        list.addFirst(0);
+        list.addLast(3);
+        assertEquals(3, list.getLast());
+    }
 
     // Tests for isEmpty
+    /**
+     * @author Pranit Vaikuntam
+     * @see IsEmpty
+     */
+    @Test
+    public void testIsEmpty() {
+        //fail("Not yet implemented");
+        if (SHOULD_FAIL) list = new isEmpty<>();
+
+        list.add(0, 1);
+        list.removeLast();
+        assertTrue(list.isEmpty());
+
+        list.add(1, 2);
+        list.addFirst(0);
+        list.addLast(3);
+        assertFalse(list.isEmpty());
+    }
 
     /**
-     * @author
-     * @see
+     * @author Pranit Vaikuntam
+     * @see IsEmptyWhenCreated
      */
     @Test
     public void testIsEmptyWhenCreated() {
+        if (SHOULD_FAIL) list = new IsEmptyCreated<>();
+        assertTrue(list.isEmpty());
     }
 
     // Tests for add
@@ -174,7 +236,7 @@ public class DoublyLinkedListTest {
      * @see RemoveLast
      */
     @Test
-    public void testRemoveFirst(){
+    public void testRemoveLast(){
 
         if(SHOULD_FAIL){
             list = new RemoveLast<>();
@@ -194,7 +256,7 @@ public class DoublyLinkedListTest {
      * @see Size
      */
     @Test
-    public void testRemoveFirst(){
+    public void testSize(){
 
         if(SHOULD_FAIL){
             list = new Size<>();
@@ -215,7 +277,7 @@ public class DoublyLinkedListTest {
      * @see Set
      */
     @Test
-    public void testRemoveFirst(){
+    public void testSet(){
 
         if(SHOULD_FAIL){
             list = new Set<>();
