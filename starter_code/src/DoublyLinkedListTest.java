@@ -11,7 +11,7 @@ public class DoublyLinkedListTest {
      * Use this to toggle between using the DoublyLinkedList class and your broken classes
      * You may submit with either true or false.
      */
-    boolean SHOULD_FAIL = false;
+    boolean SHOULD_FAIL = true;
 
     private DoublyLinkedList<Integer> list;
 
@@ -61,7 +61,7 @@ public class DoublyLinkedListTest {
     @Test
     public void testGetFirst() {
         //fail("Not yet implemented");
-        if (SHOULD_FAIL) list = new GetAtIndex<>();
+        if (SHOULD_FAIL) list = new GetFirst<>();
 
         list.add(0, 1);
         list.add(1, 2);
@@ -91,6 +91,8 @@ public class DoublyLinkedListTest {
         assertEquals(3, list.getLast());
     }
 
+
+
     // Tests for isEmpty
     /**
      * @author Pranit Vaikuntam
@@ -99,7 +101,7 @@ public class DoublyLinkedListTest {
     @Test
     public void testIsEmpty() {
         //fail("Not yet implemented");
-        if (SHOULD_FAIL) list = new isEmpty<>();
+        if (SHOULD_FAIL) list = new IsEmpty<>();
 
         list.add(0, 1);
         list.removeLast();
@@ -121,7 +123,7 @@ public class DoublyLinkedListTest {
         assertTrue(list.isEmpty());
     }
 
-    // Tests for add
+     //Tests for add
 
     /**
      * @author Anna Z
@@ -145,7 +147,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testAddFirstAddsElement() {
-        fail("Not yet implemented");
+        //fail("Not yet implemented");
 
         if(SHOULD_FAIL){
             list = new AddFirstAddsElement<>();
@@ -249,6 +251,38 @@ public class DoublyLinkedListTest {
         assertNotEquals(2, list.getFirst());
 
     }
+
+    /**
+     * @author Pranit Vaikuntam
+     * @see RemoveFirstOnEmptyThrowsException
+     */
+    @Test
+    public void testRemoveFirstOnEmptyThrowsException(){
+
+        if(SHOULD_FAIL){
+            list = new RemoveFirstOnEmptyThrowsException<>();
+        }
+
+        assertThrows(NoSuchElementException.class, () -> list.removeFirst());
+
+    }
+
+    // Tests for removeLast
+    /**
+     * @author Pranit Vaikuntam
+     * @see RemoveLastOnEmptyThrowsException
+     */
+    @Test
+    public void testRemoveLastOnEmptyThrowsException(){
+
+        if(SHOULD_FAIL){
+            list = new RemoveLastOnEmptyThrowsException<>();
+        }
+
+        assertThrows(IndexOutOfBoundsException.class, () -> list.removeLast());
+    }
+
+
 
     // Tests for size
     /**
