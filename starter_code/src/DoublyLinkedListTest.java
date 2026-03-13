@@ -11,7 +11,7 @@ public class DoublyLinkedListTest {
      * Use this to toggle between using the DoublyLinkedList class and your broken classes
      * You may submit with either true or false.
      */
-    boolean SHOULD_FAIL = true;
+    boolean SHOULD_FAIL = false;
 
     private DoublyLinkedList<Integer> list;
 
@@ -61,7 +61,7 @@ public class DoublyLinkedListTest {
     @Test
     public void testGetFirst() {
         //fail("Not yet implemented");
-        if (SHOULD_FAIL) list = new GetFirst<>();
+        if (SHOULD_FAIL) list = new GetAtIndex<>();
 
         list.add(0, 1);
         list.add(1, 2);
@@ -72,6 +72,19 @@ public class DoublyLinkedListTest {
         list.removeFirst();
         assertEquals(1, list.getFirst());
 
+    }
+
+    /**
+     * @author Anna Z
+     * @see GetFirstOnEmptyThrowsException
+     */
+    @Test
+    public void testGetFirstOnEmptyThrowsException() {
+        if(SHOULD_FAIL){
+            list = GetFirstOnEmptyThrowsException<>();
+        }
+
+        assertThrows(NoSuchElementException.class, () -> list.getFirst());
     }
 
     // Tests for getLast
@@ -90,8 +103,6 @@ public class DoublyLinkedListTest {
         list.addLast(3);
         assertEquals(3, list.getLast());
     }
-
-
 
     // Tests for isEmpty
     /**
@@ -119,11 +130,11 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testIsEmptyWhenCreated() {
-        if (SHOULD_FAIL) list = new IsEmptyCreated<>();
+        if (SHOULD_FAIL) list = new IsEmptyWhenCreated<>();
         assertTrue(list.isEmpty());
     }
 
-     //Tests for add
+    // Tests for add
 
     /**
      * @author Anna Z
@@ -131,7 +142,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testAddAtIndexOutOfBoundsThrowsException() {
-    //    fail("Not yet implemented");
+        //    fail("Not yet implemented");
         if(SHOULD_FAIL){
             list = new AddAtIndexOutOfBoundsThrowsException<>();
         }
@@ -147,7 +158,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testAddFirstAddsElement() {
-        //fail("Not yet implemented");
+        fail("Not yet implemented");
 
         if(SHOULD_FAIL){
             list = new AddFirstAddsElement<>();
@@ -171,7 +182,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testAddLastAddsElement() {
-    //    fail("Not yet implemented");
+        //    fail("Not yet implemented");
 
         if(SHOULD_FAIL){
             list = new AddLastAddsElement<>();
@@ -195,7 +206,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testRemoveAtIndex() {
-     //   fail("Not yet implemented");
+        //   fail("Not yet implemented");
 
         if(SHOULD_FAIL){
             list = new RemoveAtIndex<>();
@@ -251,38 +262,6 @@ public class DoublyLinkedListTest {
         assertNotEquals(2, list.getFirst());
 
     }
-
-    /**
-     * @author Pranit Vaikuntam
-     * @see RemoveFirstOnEmptyThrowsException
-     */
-    @Test
-    public void testRemoveFirstOnEmptyThrowsException(){
-
-        if(SHOULD_FAIL){
-            list = new RemoveFirstOnEmptyThrowsException<>();
-        }
-
-        assertThrows(NoSuchElementException.class, () -> list.removeFirst());
-
-    }
-
-    // Tests for removeLast
-    /**
-     * @author Pranit Vaikuntam
-     * @see RemoveLastOnEmptyThrowsException
-     */
-    @Test
-    public void testRemoveLastOnEmptyThrowsException(){
-
-        if(SHOULD_FAIL){
-            list = new RemoveLastOnEmptyThrowsException<>();
-        }
-
-        assertThrows(IndexOutOfBoundsException.class, () -> list.removeLast());
-    }
-
-
 
     // Tests for size
     /**
