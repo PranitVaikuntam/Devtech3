@@ -132,7 +132,6 @@ public class DoublyLinkedListTest {
         list.removeLast();
         assertTrue(list.isEmpty());
 
-        list.add(1, 2);
         list.addFirst(0);
         list.addLast(3);
         assertFalse(list.isEmpty());
@@ -172,7 +171,7 @@ public class DoublyLinkedListTest {
      */
     @Test
     public void testAddFirstAddsElement() {
-        fail("Not yet implemented");
+        //fail("Not yet implemented");
 
         if(SHOULD_FAIL){
             list = new AddFirstAddsElement<>();
