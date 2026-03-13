@@ -1,6 +1,5 @@
 /**
- * @author grayson_replace_this
- * Doesn't set new last or edit old last
+ * @author Pranit Vaikuntam
  */
 public class AddAtIndexOutOfBoundsThrowsException<E> extends DoublyLinkedList<E> {
     @Override

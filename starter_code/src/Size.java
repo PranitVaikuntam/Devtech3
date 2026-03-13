@@ -1,10 +1,9 @@
 /**
- * @author grayson_replace_this
- * Doesn't edit prev node or set last node
+ * @author Pranit Vaikuntam
  */
 public class Size<E> extends DoublyLinkedList<E>{
     @Override
     public int size() {
-        return size - 1;
+        return super.size() - 1;
     }
 }
